@@ -42,7 +42,7 @@ Interestingly, `cargo build --release` worked without error. Hmm.
 # Thoughts on Dioxus
 
 - Uses it's own cli tool `dx`, instead of using the default cargo build process. I dislike this.
-- Small footprint for a HTML/CSS GUI solution, uses the WebView of the system. Good.
+- Small footprint (2.5mb release build) for a HTML/CSS GUI solution, uses the WebView of the system. Good.
   This is similar to Tauri (which essentially is used under the hood if I understood correctly),
   which I have tested [in the past](https://andreas-mausch.de/blog/2020-02-20-tauri/).
 - The code can be re-used for all supported platforms, including mobile and web. Very nice.
