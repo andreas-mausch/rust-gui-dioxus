@@ -10,7 +10,7 @@ rustup target add wasm32-unknown-unknown
 ## How to build
 
 ```bash
-dx build --release
+cargo build --release --features desktop
 ```
 
 ## Run
@@ -46,3 +46,15 @@ Interestingly, `cargo build --release` worked without error. Hmm.
   This is similar to Tauri (which essentially is used under the hood if I understood correctly),
   which I have tested [in the past](https://andreas-mausch.de/blog/2020-02-20-tauri/).
 - The code can be re-used for all supported platforms, including mobile and web. Very nice.
+
+Update 2025-02 (Dioxus 0.6.3):
+
+- File size increased to 3.7mb for the release build
+- There was no easy method to add a menu for a desktop app in Dioxus 0.4.3.
+  This has changed and there is even an official [example](https://github.com/DioxusLabs/dioxus/blob/v0.6.3/examples/custom_menu.rs)
+  available. I just wonder if/how it is displayed for mobile apps, I
+  haven't tested it yet.
+- I had a look at the dynamic dependencies for the Linux build, and this is a bit
+  disappointing: It is huge.
+- Despite the little file size, the app still basically starts a browser which
+  makes the start-up time a bit slow. It is not huge, but also not ideal.
